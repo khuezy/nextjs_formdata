@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: 'standalone',
   experimental: {
+    nodeMiddleware: true,
     preloadEntriesOnStart: false,
     webpackMemoryOptimizations: true,
     middlewarePrefetch: 'strict',
