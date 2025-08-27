@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     middlewarePrefetch: 'strict',
     reactCompiler: true,
     ppr: true,
-    cacheComponents: true,
+    useCache: true,
     serverMinification: true,
     nextScriptWorkers: true,
   }
