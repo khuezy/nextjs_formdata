@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "canary",
+    "next": "15.4.0-canary.17",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "babel-plugin-react-compiler": "19.1.0-rc.2"
