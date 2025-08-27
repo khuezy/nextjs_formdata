@@ -9,14 +9,11 @@ import { base64, raw } from './data'
 /** Add your relevant code here for the issue to reproduce */
 export default function Home() {
   const [img, setImg] = useState('')
+  function upload() {
+    const file = new File([base64], 'hi.jpg', {
+      type: 'image/png',
+    })
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-
-    const input = event.currentTarget.querySelector(
-      `input[type=file]`,
-    ) as HTMLInputElement
-    let file = input?.files?.[0] as unknown as File
     const fd = new FormData()
     fd.append('file', file)
     serverActionUpload(fd).then(() => {
@@ -24,11 +21,10 @@ export default function Home() {
     })
   }
 
-  return <form onSubmit={handleSubmit}>
-    <input type="file" />
-    <button type='submit'>Click me</button>
+  return <div>
+    <button onClick={upload}>Click me</button>
     {img && <img src={img} />}
-  </form>;
+  </div>;
 }
 
 
